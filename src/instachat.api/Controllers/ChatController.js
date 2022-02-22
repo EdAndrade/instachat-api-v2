@@ -6,3 +6,5 @@ class ChatController {
         repository.createChatRoom();
     }
 }
+
+module.exports = ChatController
