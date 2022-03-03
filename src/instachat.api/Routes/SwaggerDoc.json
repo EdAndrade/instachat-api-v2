@@ -17,7 +17,7 @@
 
             "post": {
 
-                "tags": ["pet"],
+                "tags": ["chat"],
                 "summary": "Create a chat"
             }
         }

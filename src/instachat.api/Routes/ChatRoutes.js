@@ -2,8 +2,6 @@ const { Router } = require('express');
 const ChatController = require('../Controllers/ChatController');
 
 const router = Router();
-const chatController = new ChatController();
-
-router.post('/create_chat', chatController.createChat);
+router.post('/create_chat', ChatController.createChat);
 
 module.exports = router;
