@@ -12,7 +12,8 @@
     "swagger-ui-express": "^4.3.0"
   },
   "scripts": {
-    "dev": "nodemon src/instachat.api/Startup.js"
+    "dev": "nodemon src/instachat.api/Startup.js",
+    "start": "node src/instachat.api/Startup.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
