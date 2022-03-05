@@ -1,0 +1,25 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Instachat API",
+        "description": "API for create instant chat rooms",
+        "termsOfServices": "http://localhost:8085/terms",
+        "contact": {
+            "email": "edmilisonwork@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "host": "http://localhost:8085",
+    "basePath": "/v2",
+    "paths": {
+
+        "/create_chat": {
+
+            "post": {
+
+                "tags": ["chat"],
+                "summary": "Create a chat"
+            }
+        }
+    }
+}

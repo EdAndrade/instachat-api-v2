@@ -16,4 +16,4 @@ class ChatRepository extends IChat {
     }
 }
 
-modeule.exports = ChatRepository;
+module.exports = ChatRepository

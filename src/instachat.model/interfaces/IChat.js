@@ -15,3 +15,5 @@ class IChat {
         throw new NotImplementedException();
     }
 }
+
+module.exports = IChat;
