@@ -10,7 +10,7 @@ class ChatController {
 
     createChat(request, response){
         this._repository.createChatRoom()
-        return response.sendStatus(200)
+        return response.sendStatus(404)
     }
 
     getChat(request, response){
