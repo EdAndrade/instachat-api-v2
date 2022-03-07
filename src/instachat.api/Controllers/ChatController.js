@@ -1,5 +1,7 @@
-const repository = require('../../instachat.data/repository/ChatRepository');
+const repository = require('../../instachat.data/repository/ChatRepository')
 const ChatRequest = require('../../instachat.model/entities/ChatRequest')
+const ChatRoom = require('../../instachat.model/entities/ChatRoom')
+const GenerateHash = require('../utils/generateHash');
 
 class ChatController {
 
@@ -13,20 +15,23 @@ class ChatController {
 
         const chatRequest = new ChatRequest(request.body)
 
-        if(chatRequest.isValid()){
+        if(chatRequest.isValid().valid){
 
             const chatRoom = new ChatRoom({
                 usersQt: chatRequest.peopleQtd,
                 name: chatRequest.chatName,
-                code: GenerateHash(`${new Date()}${ckey.SECRET_KEY}`)
+                code: GenerateHash({ stringToEncode: `${new Date()}` })
+            })
+
+            return response.status(200).json({
+                chatRoom
             })
 
         }else{
-            response.status(400)
+            response.sendStatus(400)
         }
 
         this._repository.createChatRoom()
-        return response.sendStatus(404)
     }
 
     getChat(request, response){
