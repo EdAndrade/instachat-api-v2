@@ -24,7 +24,7 @@ class ChatController {
             })
 
             return response.status(200).json({
-                chatRoom
+                ...chatRoom
             })
 
         }else{
