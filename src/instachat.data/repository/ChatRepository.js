@@ -1,5 +1,5 @@
 const IChat = require('../../instachat.model/interfaces/IChat');
-const db = require('../database/connection');
+const ChatCollection = require('../database/schemas/Chat');
 
 class ChatRepository extends IChat {
 
@@ -7,12 +7,16 @@ class ChatRepository extends IChat {
         super();
     }
 
-    createChatRoom(){
-        
+    async createChatRoom({ name, code, usersQt }){
+        return await ChatCollection.create({
+            name,
+            code,
+            usersQt
+        })
     }
 
-    getChatRoom(){
-        
+    async getChatRoom(chatcode){
+        return await ChatCollection.findOne({ code: chatcode })
     }
 }
 
