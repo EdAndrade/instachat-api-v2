@@ -11,7 +11,7 @@ class ChatController {
         this.getChat = this.getChat.bind(this)
     }
 
-    createChat(request, response){
+    async createChat(request, response){
 
         const chatRequest = new ChatRequest(request.body)
 
@@ -23,6 +23,8 @@ class ChatController {
                 code: GenerateHash({ stringToEncode: `${new Date()}` })
             })
 
+            const data = await this._repository.createChatRoom(chatRoom)
+
             return response.status(200).json({
                 ...chatRoom
             })
@@ -30,14 +32,12 @@ class ChatController {
         }else{
             response.sendStatus(400)
         }
-
-        this._repository.createChatRoom()
     }
 
     getChat(request, response){
-        this._repository.getChatRoom()
+        const data = this._repository.getChatRoom()
         console.log('me')
-        return response.sendStatus(200)
+        return response.status(200).json(data)
     }
 }
 
