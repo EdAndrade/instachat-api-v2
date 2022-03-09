@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1646736856625" clover="3.2.0">
-  <project timestamp="1646736856625" name="All files">
-    <metrics statements="63" coveredstatements="52" conditionals="8" coveredconditionals="4" methods="16" coveredmethods="8" elements="87" coveredelements="64" complexity="0" loc="63" ncloc="63" packages="8" files="9" classes="9"/>
+<coverage generated="1646862599864" clover="3.2.0">
+  <project timestamp="1646862599864" name="All files">
+    <metrics statements="64" coveredstatements="55" conditionals="8" coveredconditionals="4" methods="16" coveredmethods="10" elements="88" coveredelements="69" complexity="0" loc="64" ncloc="64" packages="8" files="9" classes="9"/>
     <package name="instachat.api">
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Server.js" path="/home/nastybit/Documents/MyProjects/instachatServer/src/instachat.api/Server.js">
@@ -20,9 +20,9 @@
       </file>
     </package>
     <package name="instachat.api.Controllers">
-      <metrics statements="17" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+      <metrics statements="18" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="ChatController.js" path="/home/nastybit/Documents/MyProjects/instachatServer/src/instachat.api/Controllers/ChatController.js">
-        <metrics statements="17" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <metrics statements="18" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -36,10 +36,11 @@
         <line num="26" count="2" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
       </file>
     </package>
     <package name="instachat.api.Routes">
@@ -73,9 +74,9 @@
       </file>
     </package>
     <package name="instachat.data.repository">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="ChatRepository.js" path="/home/nastybit/Documents/MyProjects/instachatServer/src/instachat.data/repository/ChatRepository.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>

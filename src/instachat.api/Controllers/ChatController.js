@@ -8,7 +8,7 @@ class ChatController {
     constructor(){
         this._repository = new repository()
         this.createChat = this.createChat.bind(this)
-        this.getChat = this.createChat.bind(this)
+        this.getChat = this.getChat.bind(this)
     }
 
     createChat(request, response){
@@ -36,6 +36,7 @@ class ChatController {
 
     getChat(request, response){
         this._repository.getChatRoom()
+        console.log('me')
         return response.sendStatus(200)
     }
 }
