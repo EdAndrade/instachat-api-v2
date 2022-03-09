@@ -1,12 +1,7 @@
-const Pool = require('pg-pool');
+const DBConnection = require('mongoose')
 
-const db = new Pool({
-    database: '',
-    user: '',
-    password: '',
-    port: 5432,
-    max: 20,
-    maxUses: 7500
-});
+DBConnection.connect(
+    'mongodb+srv://MyMongoDBUser:<mongodbdr1f6dcx>@primeirocluster.3jeie.mongodb.net/PrimeiroCluster?retryWrites=true&w=majority'
+)
 
-module.exports = db
+module.exports = { DBConnection }
