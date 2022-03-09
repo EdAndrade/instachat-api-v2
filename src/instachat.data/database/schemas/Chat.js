@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const { DBConnection } = require('../connection.js')
 
-const ChatSchema = new mongoose.Schema({
+const ChatSchema = new DBConnection.Schema({
 
     usersQt: {
         type: String,
@@ -18,4 +18,4 @@ const ChatSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Chat', ChatSchema)
+module.exports = DBConnection.model('Chat', ChatSchema)
