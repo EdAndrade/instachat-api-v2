@@ -23,10 +23,10 @@ class ChatController {
                 code: GenerateHash({ stringToEncode: `${new Date()}` })
             })
 
-            const data = await this._repository.createChatRoom(chatRoom)
+            const { code, name, usersQt } = await this._repository.createChatRoom(chatRoom)
 
             return response.status(200).json({
-                ...chatRoom
+                code, name, usersQt
             })
 
         }else{
@@ -36,7 +36,6 @@ class ChatController {
 
     getChat(request, response){
         const data = this._repository.getChatRoom()
-        console.log('me')
         return response.status(200).json(data)
     }
 }
