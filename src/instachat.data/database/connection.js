@@ -1,7 +1,6 @@
+require('dotenv').config()
 const DBConnection = require('mongoose')
 
-DBConnection.connect(
-    'mongodb+srv://MyMongoDBUser:dr1f6dcx@primeirocluster.3jeie.mongodb.net/instachatAPI?retryWrites=true&w=majority'
-)
+DBConnection.connect(process.env.CONNECTION_STRING)
 
 module.exports = { DBConnection }
