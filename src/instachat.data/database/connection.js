@@ -1,6 +1,10 @@
 require('dotenv').config()
 const DBConnection = require('mongoose')
 
-DBConnection.connect(process.env.CONNECTION_STRING)
+try{
+    DBConnection.connect(process.env.CONNECTION_STRING)
+}catch(error){
+    console.log(error)
+}
 
 module.exports = { DBConnection }
