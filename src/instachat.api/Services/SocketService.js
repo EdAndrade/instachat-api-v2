@@ -118,7 +118,10 @@ class HandleChatRooms{
 
     handleMessage({message, chatRooms}){
 
+        console.log(message, 'aqio')
         message = this.formatMessage(message)
+        console.log(message.code, message.message, 'aquo')
+
         if(message.code && message.message){
 			this.sendMessage({message, chatRooms})
 		}
@@ -127,17 +130,15 @@ class HandleChatRooms{
     sendMessage({message, chatRooms}){
 
         chatRooms.forEach( chatRoom => {
-            console.log(chatRoom, message)
+
             if(chatRoom.chatCode === message.code){
                 
-                console.log(chatRoom,message)
                 chatRoom.users.forEach( user => {
-                    
-                    if(user.isAlive === false)
-                        user.ws.terminate();
-
-                    user.ws.send(message.message);
+                    user.isAlive === false ? user.ws.terminate() : user.ws.send(JSON.stringify({
+                        message: message.message
+                    }));
                 });
+                
             }
         });
     }
