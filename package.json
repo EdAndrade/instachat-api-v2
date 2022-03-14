@@ -16,7 +16,7 @@
     "ws": "^8.5.0"
   },
   "scripts": {
-    "dev": "nodemon src/instachat.api/Startup.js",
+    "dev": "nodemon src/instachat.api/Startup.js -HOST=0.0.0.0",
     "start": "node src/instachat.api/Startup.js",
     "test": "jest --coverage"
   },

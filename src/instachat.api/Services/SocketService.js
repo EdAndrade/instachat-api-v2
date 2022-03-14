@@ -135,7 +135,8 @@ class HandleChatRooms{
                 
                 chatRoom.users.forEach( user => {
                     user.isAlive === false ? user.ws.terminate() : user.ws.send(JSON.stringify({
-                        message: message.message
+                        data: message.message.data,
+                        user: message.message.user
                     }));
                 });
                 
