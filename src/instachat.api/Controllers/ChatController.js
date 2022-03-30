@@ -2,6 +2,7 @@ const repository = require('../../instachat.data/repository/ChatRepository')
 const ChatRequest = require('../../instachat.model/entities/ChatRequest')
 const ChatRoom = require('../../instachat.model/entities/ChatRoom')
 const GenerateHash = require('../utils/generateHash');
+require('dotenv').config()
 
 class ChatController {
 
@@ -22,7 +23,9 @@ class ChatController {
                 const chatRoom = new ChatRoom({
                     usersQt: chatRequest.peopleQtd,
                     name: chatRequest.chatName,
-                    code: GenerateHash({ stringToEncode: `${new Date()}` })
+                    code: GenerateHash({ 
+                        stringToEncode: `${new Date()}${process.env.SECRETY_CHAT_CODE}`
+                    })
                 })
     
                 const { code, name, usersQt } = await this._repository.createChatRoom(chatRoom)
