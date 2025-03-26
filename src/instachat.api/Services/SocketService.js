@@ -1,12 +1,13 @@
 const { WebSocketServer } = require('ws')
-const repository = require('../../instachat.data/repository/ChatRepository')
+const ChatRepository = require('../../instachat.data/repository/ChatRepository')
 
 class WebSocketService{
 
     constructor(){
-        this.chatRooms = []
+        const chatRepository = new ChatRepository()
+        this.chatRooms = ChatRepository.getChatRoomsInMemory()
         this.startSocket(new WebSocketServer({port: 8081}))
-        this.handleChatRooms = new HandleChatRooms(new repository())
+        this.handleChatRooms = new HandleChatRooms(chatRepository)
     }
 
     startSocket(socket){
@@ -145,9 +146,13 @@ class HandleChatRooms{
         });
     }
 
-    getChatRoom(chatCode){
-        return true
+    getChatRoomByCode({code, chatRooms}){
+        return chatRooms.find((chat) => chat.chatCode === code)
+    }
+
+    hasChatRoomEnoughtSpace({chatRoom}){
+        return chatRoom.users.length < chatRoom.usersQt;
     }
 }
 
-module.exports = WebSocketService
+module.exports = { WebSocketService, HandleChatRooms }
